@@ -29,7 +29,7 @@
     // How do I pass through the users input from prompt to store data as pname???
     // var pname = ('userinput');
 
-    
+        var word = hgame.wordbank[Math.floor(Math.random()*words.length)];
         var goway = ('Bye, we dislike cowards anyways')
         function play (){
           if(confirm("Would you like to play Hangman?")){
@@ -42,7 +42,10 @@
           } else {
               alert(goway);
           }}
-       
+           
+          function keytracker (){
+
+          }
 
 play();
 
