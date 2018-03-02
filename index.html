@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,80 +12,61 @@
 
 <body>
 
-    <h1>Hangman Foo!</h1>
-<p id="demo">
+    <h1></h1>
+    <p id="demo">
 
-</p>
+    </p>
 
     <script>
-    
-    // This is the OBJ for the game
-
-    var hgame = {
-        wordbank: ['cat', 'dog', 'rat', 'sat', 'bat','hat'],
-        blankbank: ['_','_', '_'],
-        miswords: ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'],
-        lives: 3,
+        // This is the OBJ for the game
+        var hgame = {
+            wordbank: ['cat', 'dog', 'rat', 'sat', 'bat', 'hat'],
+            blankbank: ['_', '_', '_'],
+            miswords: ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r',
+                's', 't', 'u', 'v', 'w', 'x', 'y', 'z'
+            ],
+            lives: 3,
         }
-    // How do I pass through the users input from prompt to store data as pname???
-    // var pname = ('userinput');
+        // How do I pass through the users input from prompt to store data as pname???
+        // var pname = ('userinput');
 
-        var word = hgame.wordbank[Math.floor(Math.random()*hgame.wordbank.length)];
-        var goway = ('Bye, we dislike cowards anyways');
-        var ansArr =[];
+        var word = hgame.wordbank[Math.floor(Math.random() * hgame.wordbank.length)];
+        var goway = ('May the Gods have mercy upon thee.');
+        var ansArr = [];
 
-            for (var i = 0; i < hgame.wordbank; i++) {
-                ansArr[i]="_";
-            }
-        var remlett = hgame.wordbank.length; 
+        for (var i = 0; i < hgame.wordbank; i++) {
+            ansArr[i] = "_";
+        }
+        var remlett = hgame.wordbank.length;
         // var guess = <input type="text" onkeydown="myFunction(event)">;
-       
-        function play (){
-          if(confirm("Would you like to play Hangman?")){
-             var person = prompt('What shall we call you brave one?');
-              if(person !=null) {
-                  alert('Hello '+ person + "! I will crush you!");
-                  alert("The theme is three letter words.");
-                  alert("You will have 3 lives to solve the board");
+
+        function start() {
+            if (confirm("Would you like to play Hangman?")) {
+                var person = prompt('What shall we call you brave one?');
+                if (person != null) {
+                    document.write('Hello ' + person + "! I will crush you!</br>");
+                    document.write("The theme will be three letter words.</br>");
+                    document.write("You will have 3 lives to solve the board");
+                }
+            } else {
+                alert(goway);
+                while (remlett > 0) {
+
+                }
             }
-          } else {
-              alert(goway);
-            while (remlett > 0) {
-
-            }
-          }}
-        
-
-          document.addEventListener('keydown', (event) => {
-              const keyName = event.key;
-              alert('keydown event\n\n' + 'key: ' + keyName);
-          });
-        // for (var j = 0;j<word.length;i++){
-        //     if (word[i] === guess){
-        //         ansArr[j] = guess;
-        //         remlett--;
-        //     }
-        // }
-           
-    
-
-play();
+        }
+        //neeed to tweak addEventlistner to fit modality
+        document.addEventListener('keydown', (event) => {
+            const keyName = event.key;
+            alert('keydown event\n\n' + 'key: ' + keyName);
+        });
 
 
 
 
-        
-      
-
-        
-
-     
-    
-    
-    
-    
-    
+        start();
     </script>
-    
+
 </body>
+
 </html>
