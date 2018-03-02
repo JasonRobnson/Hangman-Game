@@ -12,7 +12,9 @@
 <body>
 
     <h1>Hangman Foo!</h1>
+<p id="demo">
 
+</p>
 
     <script>
     
@@ -21,13 +23,13 @@
     var hgame = {
         wordbank: ['cat', 'dog', 'rat', 'sat', 'bat','hat'],
         blankbank: ['_','_', '_'],
+        miswords: ['a']
         lives: 3,
         }
     // How do I pass through the users input from prompt to store data as pname???
     // var pname = ('userinput');
 
-        // var playh = ('Would you like to play Hangman?');
-        // var pname = ('What shall we call you brave one?');
+    
         var goway = ('Bye, we dislike cowards anyways')
         function play (){
           if(confirm("Would you like to play Hangman?")){
@@ -40,16 +42,7 @@
           } else {
               alert(goway);
           }}
-        // } 
-        // function pname () {
-        //     var person = prompt('What shall we call you brave one?');
-        //     if (person !=null) {
-        //         alert("Hello"+ person + "! I will crush you.")
-        //     }
-
-// // play ()
-
-// pname ()
+       
 
 play();
 
