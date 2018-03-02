@@ -18,6 +18,7 @@
     </p>
 
     <script>
+        "use strict"
         // This is the OBJ for the game
         var hgame = {
             wordbank: ['cat', 'dog', 'rat', 'sat', 'bat', 'hat'],
@@ -30,9 +31,12 @@
         // How do I pass through the users input from prompt to store data as pname???
         // var pname = ('userinput');
 
-        var word = hgame.wordbank[Math.floor(Math.random() * hgame.wordbank.length)];
+        var randNum = Math.floor(Math.random() * hgame.wordbank.length);
+        var randWord = hgame.wordbank[randNum];
+       
         var goway = ('May the Gods have mercy upon thee.');
         var ansArr = [];
+        var ready = "Are you ready to get started?";
 
         for (var i = 0; i < hgame.wordbank; i++) {
             ansArr[i] = "_";
@@ -42,11 +46,16 @@
 
         function start() {
             if (confirm("Would you like to play Hangman?")) {
-                var person = prompt('What shall we call you brave one?');
-                if (person != null) {
-                    document.write('Hello ' + person + "! I will crush you!</br>");
+                var player = prompt('What shall we call you brave one?');
+                if (player != null) {
+                    document.write('Hello ' + player + "! I will crush you!</br>");
                     document.write("The theme will be three letter words.</br>");
                     document.write("You will have 3 lives to solve the board");
+                    prompt(ready); {
+                        if (player !=null) {
+                           
+                        }
+                    }
                 }
             } else {
                 alert(goway);
@@ -56,15 +65,18 @@
             }
         }
         //neeed to tweak addEventlistner to fit modality
-        document.addEventListener('keydown', (event) => {
-            const keyName = event.key;
-            alert('keydown event\n\n' + 'key: ' + keyName);
-        });
+        // document.addEventListener('keydown', (event) => {
+        //     const keyName = event.key;
+        //     alert('keydown event\n\n' + 'key: ' + keyName);
+        // });
+        const boardsetup = function() {
+
+        }
 
 
 
 
-        start();
+      console.log(randWord)
     </script>
 
 </body>
