@@ -31,20 +31,29 @@
         var goway = ('Bye, we dislike cowards anyways')
         function play (){
           if(confirm("Would you like to play Hangman?")){
-              prompt(pname);
+             var person = prompt('What shall we call you brave one?');
+              if(person !=null) {
+                  alert('Hello '+ person + "! I will crush you!")
+              }
           } else {
               alert(goway);
-          }
-        } 
+          }}
+        // } 
         // function pname () {
         //     var person = prompt('What shall we call you brave one?');
         //     if (person !=null) {
         //         alert("Hello"+ person + "! I will crush you.")
         //     }
 
+// // play ()
+
+// pname ()
+
+play();
+
 
         
-       play()
+      
 
         
 
