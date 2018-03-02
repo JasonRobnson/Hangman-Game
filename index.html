@@ -29,8 +29,16 @@
     // How do I pass through the users input from prompt to store data as pname???
     // var pname = ('userinput');
 
-        var word = hgame.wordbank[Math.floor(Math.random()*words.length)];
-        var goway = ('Bye, we dislike cowards anyways')
+        var word = hgame.wordbank[Math.floor(Math.random()*hgame.wordbank.length)];
+        var goway = ('Bye, we dislike cowards anyways');
+        var ansArr =[];
+
+            for (var i = 0; i < hgame.wordbank; i++) {
+                ansArr[i]="_";
+            }
+        var remlett = hgame.wordbank.length; 
+        // var guess = <input type="text" onkeydown="myFunction(event)">;
+       
         function play (){
           if(confirm("Would you like to play Hangman?")){
              var person = prompt('What shall we call you brave one?');
@@ -41,11 +49,24 @@
             }
           } else {
               alert(goway);
-          }}
-           
-          function keytracker (){
+            while (remlett > 0) {
 
-          }
+            }
+          }}
+        
+
+          document.addEventListener('keydown', (event) => {
+              const keyName = event.key;
+              alert('keydown event\n\n' + 'key: ' + keyName);
+          });
+        // for (var j = 0;j<word.length;i++){
+        //     if (word[i] === guess){
+        //         ansArr[j] = guess;
+        //         remlett--;
+        //     }
+        // }
+           
+    
 
 play();
 
