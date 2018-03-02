@@ -21,8 +21,8 @@
         "use strict"
         // This is the OBJ for the game
         var hgame = {
-            wordbank: ['cat', 'dog', 'rat', 'sat', 'bat', 'hat'],
-            blankbank: ['_', '_', '_'],
+            wordbank: ['cat', 'dog', 'rat', 'sat', 'bat', 'hat','terd'],
+            blankbank: [],
             miswords: ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r',
                 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'
             ],
@@ -30,9 +30,35 @@
         }
         // How do I pass through the users input from prompt to store data as pname???
         // var pname = ('userinput');
-
+            //randNum and randWord work together to generate random word
         var randNum = Math.floor(Math.random() * hgame.wordbank.length);
         var randWord = hgame.wordbank[randNum];
+        var rightWord = [];
+        var wrongWord = [];
+        console.log(randWord);
+
+        //ES6 arrow things removes function 
+        var generateUnscore = () => {
+            for (var i = 0; i < randWord.length; i++) {
+                hgame.blankbank.push('_');
+            }
+            return hgame.blankbank;
+
+            }
+
+            //caputring users keyboard event
+        document.addEventListener('keypress', (event) => {
+           //converts capture event into key code
+            var keyCode = event.keyCode;
+            //converts keycode into a string with the letter
+            var keyword = String.fromCharCode(keyCode);
+            //will compare numbers, and if number exist will return number > -1, if users guess is right
+            if (randWord.indexOf(keyword) > -1){
+                console.log(true)
+            }
+            
+            console.log(keyword);
+        });
        
         var goway = ('May the Gods have mercy upon thee.');
         var ansArr = [];
@@ -65,10 +91,7 @@
             }
         }
         //neeed to tweak addEventlistner to fit modality
-        // document.addEventListener('keydown', (event) => {
-        //     const keyName = event.key;
-        //     alert('keydown event\n\n' + 'key: ' + keyName);
-        // });
+        
         const boardsetup = function() {
 
         }
@@ -76,7 +99,7 @@
 
 
 
-      console.log(randWord)
+      console.log(generateUnscore());
     </script>
 
 </body>
