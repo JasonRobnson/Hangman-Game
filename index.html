@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="./assets/css/style.css">
-    <title>Who's Ready for Sum Hangman!</title>
+    <title>Who's Ready for Some Hangman!</title>
 </head>
 
 
@@ -22,7 +22,7 @@
         // This is the OBJ for the game
         var hgame = {
             wordbank: ['cat', 'dog', 'rat', 'sat', 'bat', 'hat', 'terd', 'butter',],
-            wordbank: ['butter'],
+            // wordbank: ['butter'],
             blankbank: [],
             miswords: ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r',
                 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'
@@ -70,7 +70,7 @@
                 hgame.lives--;
             }
 
-            checkIfWinnerOrLoser();
+            checkIfWinner();
 
         });
 
@@ -125,17 +125,13 @@
                             alert(goway);
                         }
                     }
-                    //neeed to tweak addEventlistner to fit modality
-
-                    // const boardsetup = function() {
-
-                    // }
+    
                     start();
                     generateUnscore();
 
                     
 
-                    //   console.log(generateUnscore());
+                
     </script>
 
 </body>
