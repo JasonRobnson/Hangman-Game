@@ -21,8 +21,8 @@
         "use strict"
         // This is the OBJ for the game
         var hgame = {
-        //     wordbank: ['cat', 'dog', 'rat', 'sat', 'bat', 'hat', 'terd', 'butter',],
-            wordbank: ['butter',],
+            wordbank: ['cat', 'dog', 'rat', 'sat', 'bat', 'hat', 'terd', 'butter',],
+            wordbank: ['butter'],
             blankbank: [],
             miswords: ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r',
                 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'
@@ -33,56 +33,70 @@
         // var pname = ('userinput');
         //randNum and randWord work together to generate random word
         var randNum = Math.floor(Math.random() * hgame.wordbank.length);
-        var randWord = hgame.wordbank[randNum];
-        var rightLetter = [];
-        var wrongLetter = [];
-
+        var randWord = hgame.wordbank[randNum].split("");
+        var usedLetter = [];
+        var underscoreArray = generateUnscore();
         //TESTUBG
         console.log(randWord);
-        console.log(wrongLetter);
-        console.log(rightLetter);
+        console.log(usedLetter);
 
 
         //ES6 arrow things removes function {need to make this descrease lives}
-        var generateUnscore = () => {
+        function generateUnscore() {
+            var newArray = []
             for (var i = 0; i < randWord.length; i++) {
-                hgame.blankbank.push('_');
+                newArray.push('_');
             }
-            return hgame.blankbank;
+            return newArray;
 
         }
 
         //caputring users keyboard event
         document.addEventListener('keypress', (event) => {
-                    //converts capture event into key code
-                    var keyCode = event.keyCode;
-                    //converts keycode into a string with the letter
-                    var keyword = String.fromCharCode(keyCode);
-                    //will compare numbers, and if number exist will return number > -1, if users guess is right
-                    if (randWord.indexOf(keyword) > -1) {
-                        //adds to right words array
-                        rightLetter.push(keyword);
-                        console.log(rightLetter);
-                        generateUnscore[randWord.indexOf(keyword)] = keyword;
-                        //compares right letter against randword 
-                        if (rightLetter.join('') == randWord) {
-                            alert('Congrats, You win!');
-                        }
-                    } 
-                    else { //shoves wrongletter's into wrong letter arrray
-                        wrongLetter.push(keyword);
-                        console.log(wrongLetter);
+            //converts capture event into key code
+            var keyCode = event.keyCode;
+            //converts keycode into a string with the letter
+            var letterPressed = String.fromCharCode(keyCode);
+            //will compare numbers, and if number exist will return number > -1, if users guess is right
+            
+            checkAlreadyUsed(letterPressed)
+            
+            if (randWord.includes(letterPressed)) {
+                usedLetter.push(letterPressed);
+                updateUnderscoreArray(letterPressed);    
+            } 
+            else { //shoves wrongletter's into wrong letter arrray
+                usedLetter.push(letterPressed);
+                hgame.lives--;
+            }
 
-
-                        if (wrongLetter.length == 3) {
-                            alert('Sorry! You lost');
-                        }
-
-                        console.log(keyword)
-
-                    }
+            checkIfWinnerOrLoser();
 
         });
+
+        function checkIfWinner() {
+            if(!underscoreArray.includes("_")){
+                alert("YOU WIN!!!")
+            }
+
+            if(hgame.lives === 0) {
+                alert("YOU LOSE YOU LOSER!!")
+            }
+        }
+
+        function checkAlreadyUsed(letter) {
+            if(usedLetter.includes(letter)) {
+                alert("You already used that letter. Pick another one.")
+            }
+        }
+
+        function updateUnderscoreArray(letter) {
+            for(let i = 0; i < randWord.length; i++) {
+                if(randWord[i] === letter) {
+                    underscoreArray[i] = letter;
+                }
+            }
+        }
 
                     var goway = ('May the Gods have mercy upon thee.');
                     var ansArr = [];
