@@ -60,10 +60,19 @@
                rightLetter.push(keyword);
                console.log(rightLetter);
             }
-            else {
+            else {//shoves wrongletter's into wrong letter arrray
                 wrongLetter.push(keyword);
                 console.log(wrongLetter);
+            generateUnscore[randWord.indexOf(keyword)] = keyword;
+            //compares right letter against randword 
+            if(rightLetter.join('') == randWord){
+                alert('Congrats, You win!'); 
             }
+                
+                   
+                    console.log(keyword)
+
+            } 
            
         });
        
@@ -81,7 +90,7 @@
             if (confirm("Would you like to play Hangman?")) {
                 var player = prompt('What shall we call you brave one?');
                 if (player != null) {
-                    document.write('Hello ' + player + "! I will crush you!</br>");
+                    document.write('He                                            llo ' + player + "! I will crush you!</br>");
                     document.write("The theme will be three letter words.</br>");
                     document.write("You will have 3 lives to solve the board");
                     prompt(ready); {
