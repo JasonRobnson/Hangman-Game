@@ -21,7 +21,8 @@
         "use strict"
         // This is the OBJ for the game
         var hgame = {
-            wordbank: ['cat', 'dog', 'rat', 'sat', 'bat', 'hat','terd'],
+        //     wordbank: ['cat', 'dog', 'rat', 'sat', 'bat', 'hat', 'terd', 'butter',],
+            wordbank: ['butter',],
             blankbank: [],
             miswords: ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r',
                 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'
@@ -30,14 +31,17 @@
         }
         // How do I pass through the users input from prompt to store data as pname???
         // var pname = ('userinput');
-            //randNum and randWord work together to generate random word
+        //randNum and randWord work together to generate random word
         var randNum = Math.floor(Math.random() * hgame.wordbank.length);
         var randWord = hgame.wordbank[randNum];
         var rightLetter = [];
         var wrongLetter = [];
-        
+
         //TESTUBG
         console.log(randWord);
+        console.log(wrongLetter);
+        console.log(rightLetter);
+
 
         //ES6 arrow things removes function {need to make this descrease lives}
         var generateUnscore = () => {
@@ -46,79 +50,78 @@
             }
             return hgame.blankbank;
 
-            }
-
-            //caputring users keyboard event
-        document.addEventListener('keypress', (event) => {
-           //converts capture event into key code
-            var keyCode = event.keyCode;
-            //converts keycode into a string with the letter
-            var keyword = String.fromCharCode(keyCode);
-             //will compare numbers, and if number exist will return number > -1, if users guess is right
-            if(randWord.indexOf(keyword) > -1){
-               //adds to right words array
-               rightLetter.push(keyword);
-               console.log(rightLetter);
-            }
-            else {//shoves wrongletter's into wrong letter arrray
-                wrongLetter.push(keyword);
-                console.log(wrongLetter);
-            generateUnscore[randWord.indexOf(keyword)] = keyword;
-            //compares right letter against randword 
-            if(rightLetter.join('') == randWord){
-                alert('Congrats, You win!'); 
-            }
-              if (wrongLetter.length == 4);
-                  alert('Sorry! You lost');
-              
-                   
-                    console.log(keyword)
-
-            } 
-           
-        });
-       
-        var goway = ('May the Gods have mercy upon thee.');
-        var ansArr = [];
-        var ready = "Are you ready to get started?";
-
-        for (var i = 0; i < hgame.wordbank; i++) {
-            ansArr[i] = "_";
         }
-        var remlett = hgame.wordbank.length;
-        // var guess = <input type="text" onkeydown="myFunction(event)">;
 
-        function start() {
-            if (confirm("Would you like to play Hangman?")) {
-                var player = prompt('What shall we call you brave one?');
-                if (player != null) {
-                    document.write('He                                            llo ' + player + "! I will crush you!</br>");
-                    document.write("The theme will be three letter words.</br>");
-                    document.write("You will have 3 lives to solve the board");
-                    prompt(ready); {
-                        if (player !=null) {
-                           
+        //caputring users keyboard event
+        document.addEventListener('keypress', (event) => {
+                    //converts capture event into key code
+                    var keyCode = event.keyCode;
+                    //converts keycode into a string with the letter
+                    var keyword = String.fromCharCode(keyCode);
+                    //will compare numbers, and if number exist will return number > -1, if users guess is right
+                    if (randWord.indexOf(keyword) > -1) {
+                        //adds to right words array
+                        rightLetter.push(keyword);
+                        console.log(rightLetter);
+                        generateUnscore[randWord.indexOf(keyword)] = keyword;
+                        //compares right letter against randword 
+                        if (rightLetter.join('') == randWord) {
+                            alert('Congrats, You win!');
+                        }
+                    } 
+                    else { //shoves wrongletter's into wrong letter arrray
+                        wrongLetter.push(keyword);
+                        console.log(wrongLetter);
+
+
+                        if (wrongLetter.length == 3) {
+                            alert('Sorry! You lost');
+                        }
+
+                        console.log(keyword)
+
+                    }
+
+        });
+
+                    var goway = ('May the Gods have mercy upon thee.');
+                    var ansArr = [];
+                    var ready = "Are you ready to get started?";
+
+                    for (var i = 0; i < hgame.wordbank; i++) {
+                        ansArr[i] = "_";
+                    }
+                    var remlett = hgame.wordbank.length;
+                    // var guess = <input type="text" onkeydown="myFunction(event)">;
+
+                    function start() {
+                        if (confirm("Would you like to play Hangman?")) {
+                            var player = prompt('What shall we call you brave one?');
+                            if (player != null) {
+                                document.write('Hello ' + player + "! I will crush you!</br>");
+                                document.write("The theme will be three letter words.</br>");
+                                document.write("You will have 3 lives to solve the board");
+                                prompt(ready); {
+                                    if (player != null) {
+
+                                    }
+                                }
+                            }
+                        } else {
+                            alert(goway);
                         }
                     }
-                }
-            } else {
-                alert(goway);
-                while (remlett > 0) {
+                    //neeed to tweak addEventlistner to fit modality
 
-                }
-            }
-        }
-        //neeed to tweak addEventlistner to fit modality
-        
-        // const boardsetup = function() {
+                    // const boardsetup = function() {
 
-        // }
-    start();
-    generateUnscore();
+                    // }
+                    start();
+                    generateUnscore();
 
+                    
 
-
-    //   console.log(generateUnscore());
+                    //   console.log(generateUnscore());
     </script>
 
 </body>
