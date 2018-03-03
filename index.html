@@ -33,11 +33,13 @@
             //randNum and randWord work together to generate random word
         var randNum = Math.floor(Math.random() * hgame.wordbank.length);
         var randWord = hgame.wordbank[randNum];
-        var rightWord = [];
-        var wrongWord = [];
+        var rightLetter = [];
+        var wrongLetter = [];
+        
+        //TESTUBG
         console.log(randWord);
 
-        //ES6 arrow things removes function 
+        //ES6 arrow things removes function {need to make this descrease lives}
         var generateUnscore = () => {
             for (var i = 0; i < randWord.length; i++) {
                 hgame.blankbank.push('_');
@@ -52,12 +54,17 @@
             var keyCode = event.keyCode;
             //converts keycode into a string with the letter
             var keyword = String.fromCharCode(keyCode);
-            //will compare numbers, and if number exist will return number > -1, if users guess is right
-            if (randWord.indexOf(keyword) > -1){
-                console.log(true)
+             //will compare numbers, and if number exist will return number > -1, if users guess is right
+            if(randWord.indexOf(keyword) > -1){
+               //adds to right words array
+               rightLetter.push(keyword);
+               console.log(rightLetter);
             }
-            
-            console.log(keyword);
+            else {
+                wrongLetter.push(keyword);
+                console.log(wrongLetter);
+            }
+           
         });
        
         var goway = ('May the Gods have mercy upon thee.');
