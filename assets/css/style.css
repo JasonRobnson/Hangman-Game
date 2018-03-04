@@ -10,10 +10,13 @@
    width: 100%;
 
 }
-#rightwords{
+#rwordiv{
     background-color: green;
     height: 400px;
     width: 100%;
+}
+#rightwords{
+    font-size: 50px;
 }
 #uword{
     background-color: pink;

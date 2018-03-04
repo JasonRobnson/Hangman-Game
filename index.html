@@ -21,8 +21,12 @@
             <div class="row">
                 <div class="col-md-12">
                         <h3 id="statusMessage" class="text-center"> </h3>
-                    <div id="rightwords">
+                    <div id="rworddiv">
                             <img class="rounded mx-auto d-block"src="http://via.placeholder.com/350x150" alt="placeholder">
+
+                            <p id="rightwords" class="text-center">
+
+                            </p>
 
                     </div>
 
@@ -32,7 +36,7 @@
             </div>
             <div class="row">
                 <div class="col-md-6">
-                    <div>
+                    <div class="uword">
                             <h2 class="text-center">Used Letter Bank</h2>
                             <img class="rounded mx-auto d-block" src="http://via.placeholder.com/350x150" alt="trash can">
                             <p id="usedwords">
@@ -72,6 +76,7 @@
         console.log(randWord);
         console.log(usedLetter);
         console.log(underscoreArray);
+        document.getElementById('rightwords').innerHTML = (underscoreArray);
 
 
         //ES6 arrow things removes function {need to make this descrease lives}
@@ -104,6 +109,7 @@
             else { //shoves wrongletter's into wrong letter arrray
                 usedLetter.push(letterPressed);
                 hgame.lives--;
+                
             }
 
             checkIfWinner();
