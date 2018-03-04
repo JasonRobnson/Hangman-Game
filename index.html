@@ -15,12 +15,12 @@
 
 <body>
         <div class="header">
-                    <h1>Hangman!</h1>
+                    <h1 class="text-center">Hangman!</h1>
         </div>
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                        <p id="statusMessage"> This is where the right words go</p>
+                        <h3 id="statusMessage" class="text-center"> </h3>
                     <div id="rightwords">
                             
 
@@ -140,14 +140,8 @@
                         if (confirm("Would you like to play Hangman?")) {
                             var player = prompt('What shall we call you brave one?');
                             if (player != null) {
-                                document.write('Hello ' + player + "! I will crush you!</br>");
-                                document.write("The theme will be three letter words.</br>");
-                                document.write("You will have 3 lives to solve the board");
-                                prompt(ready); {
-                                    if (player != null) {
-
-                                    }
-                                }
+                                alert('Hello ' + player + ", the theme will be American comedy greats.");
+                                document.getElementById('statusMessage').innerHTML = ("You will have 3 lives to solve the board");
                             }
                         } else {
                             alert(goway);
