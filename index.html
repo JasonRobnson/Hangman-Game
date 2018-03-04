@@ -8,7 +8,7 @@
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="./assets/css/style.css">
-    <link rel="stylesheet" href="./assets/script/index.js">
+    <!-- <link rel="stylesheet" href="./assets/script/index.js"> -->
     <title>Who's Ready for Some Hangman!</title>
 </head>
 
@@ -32,9 +32,12 @@
             </div>
             <div class="row">
                 <div class="col-md-6">
-                    <div id="usedwords">
+                    <div>
                             <h2 class="text-center">Used Letter Bank</h2>
                             <img class="rounded mx-auto d-block" src="http://via.placeholder.com/350x150" alt="trash can">
+                            <p id="usedwords">
+
+                            </p>
                                 
                     </div>
                 </div>
@@ -68,6 +71,7 @@
         //TESTUBG
         console.log(randWord);
         console.log(usedLetter);
+        console.log(underscoreArray);
 
 
         //ES6 arrow things removes function {need to make this descrease lives}
@@ -88,11 +92,14 @@
             var letterPressed = String.fromCharCode(keyCode);
             //will compare numbers, and if number exist will return number > -1, if users guess is right
             
-            checkAlreadyUsed(letterPressed)
+            checkAlreadyUsed(letterPressed);
+            document.getElementById('usedwords').innerHTML = (usedLetter);
+
             
             if (randWord.includes(letterPressed)) {
                 usedLetter.push(letterPressed);
-                updateUnderscoreArray(letterPressed);    
+                updateUnderscoreArray(letterPressed);
+               
             } 
             else { //shoves wrongletter's into wrong letter arrray
                 usedLetter.push(letterPressed);
@@ -123,6 +130,7 @@
             for(let i = 0; i < randWord.length; i++) {
                 if(randWord[i] === letter) {
                     underscoreArray[i] = letter;
+                    console.log(letter)
                 }
             }
         }
