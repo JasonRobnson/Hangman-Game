@@ -1,0 +1,27 @@
+.header {
+    background-color: red;
+    height: 100%;
+    width: 100%;
+
+}
+.container {
+   background-color: blue;
+   height: 100%;
+   width: 100%;
+
+}
+#rightwords{
+    background-color: green;
+    height: 100%;
+    width: 100%;
+}
+#usedwords{
+    background-color: pink;
+    height: 100%;
+    width: 100%;
+}
+#wordtiles{
+    background-color: orange;
+    height: 100%;
+    width: 100%;
+}
