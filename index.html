@@ -138,13 +138,20 @@
 
         function checkIfWinner() {
             if(!underscoreArray.includes("_")){
+                document.getElementById('rightwords').innerHTML = ("Great Job!");
                  alert("YOU WIN!!!");
+                 hgame.lives = 6;
                 
+                 
+                return
             }
 
             if(hgame.lives === 0) {
-                alert("YOU LOSE YOU LOSER!!")
-                
+                document.getElementById('usedwords').innerHTML = ("");
+                document.getElementById('rightwords').innerHTML = ("SAD FACE!");
+                alert("YOU LOSE YOU LOSER!!");
+                hgame.lives = 6;
+                return
             }
         }
             //creating buttons
