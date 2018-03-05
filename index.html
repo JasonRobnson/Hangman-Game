@@ -17,7 +17,7 @@
 <body>
         <div class="header">
                     <h1 class="text-center">Hangman!</h1>
-                     <h3 class="text-center">American Comedian Greats</h3>
+                     <h3 class="text-center">American Comedics Greats Last Name</h3>
         </div>
         <div class="container">
             <div class="row">
@@ -94,7 +94,7 @@
             //will compare numbers, and if number exist will return number > -1, if users guess is right
             
             checkAlreadyUsed(letterPressed);
-            document.getElementById('usedwords').innerHTML = (usedLetter);
+            document.getElementById('usedwords').innerHTML = usedLetter.join("");
 
             
             if (randWord.includes(letterPressed)) {
