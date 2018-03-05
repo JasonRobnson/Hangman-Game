@@ -136,7 +136,7 @@
             for(let i = 0; i < randWord.length; i++) {
                 if(randWord[i] === letter) {
                     underscoreArray[i] = letter;
-                    console.log(letter)
+                    document.getElementById('rightwords').innerHTML = (letter);
                 }
             }
         }
@@ -155,8 +155,8 @@
                         if (confirm("Would you like to play Hangman?")) {
                             var player = prompt('What shall we call you brave one?');
                             if (player != null) {
-                                alert('Hello ' + player + ", the theme will be American comedy greats.");
-                                document.getElementById('statusMessage').innerHTML = ("You will have 3 lives to solve the board");
+                                alert('Good Luck! ' +  player  +  ' !' );
+                                document.getElementById('statusMessage').innerHTML = ("Theme American Comedy Greats!");
                             }
                         } else {
                             alert(goway);
