@@ -63,7 +63,7 @@
             miswords: ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r',
                 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'
             ],
-            lives: 3,
+            lives: 6,
         }
         // How do I pass through the users input from prompt to store data as pname???
         // var pname = ('userinput');
@@ -98,7 +98,7 @@
             //will compare numbers, and if number exist will return number > -1, if users guess is right
             
             checkAlreadyUsed(letterPressed);
-            document.getElementById('usedwords').innerHTML = (letterPressed);
+            document.getElementById('usedwords').innerHTML = (usedLetter);
 
             
             if (randWord.includes(letterPressed)) {
