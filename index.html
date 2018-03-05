@@ -73,6 +73,7 @@
         console.log(underscoreArray);
         document.getElementById('rightwords').innerHTML = underscoreArray.join("");
 
+       
 
         //ES6 arrow things removes function {need to make this descrease lives}
         function generateUnscore() {
@@ -104,7 +105,8 @@
             else { //shoves wrongletter's into wrong letter arrray
                 usedLetter.push(letterPressed);
                 hgame.lives--;
-                
+                console.log(hgame.lives)
+                document.getElementById("statusMessage").innerHTML = "You have " + hgame.lives + " lives remaining";
             }
 
             checkAlreadyUsed();
@@ -151,6 +153,7 @@
                 document.createElement.append(button);
             }
        
+           
 
         // function updateUnderscoreArray(letter) {
         //     for(let i = 0; i < randWord.length; i++) {
@@ -176,6 +179,7 @@
                             var player = prompt('What shall we call you brave one?');
                             if (player != null) {
                                 alert('Good Luck! ' +  player  +  ' !' );
+                                document.getElementById("statusMessage").innerHTML = "You have " + hgame.lives + " lives remaining";
                             }
                         } else {
                             alert(goway);
