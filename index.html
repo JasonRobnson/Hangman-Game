@@ -40,7 +40,7 @@
                     <div class="uword">
                             <h2 class="text-center">Used Letter Bank</h2>
                             
-                            <p id="usedwords">
+                            <p id="usedwords" class="text-center">
 
                             </p>
                                 
@@ -53,7 +53,7 @@
         "use strict"
         // This is the OBJ for the game
         var hgame = {
-            wordbank: ['cat', 'dog', 'rat', 'sat', 'bat', 'hat', 'terd', 'butter',],
+            wordbank: ['foxx', 'pryor', 'rock', 'hope', 'hart', 'vandyke', 'seinfeld', 'mac',],
             blankbank: [],
             letters: ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r',
                 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'
@@ -107,6 +107,7 @@
                 hgame.lives--;
                 console.log(hgame.lives)
                 document.getElementById("statusMessage").innerHTML = "You have " + hgame.lives + " lives remaining";
+                
             }
 
             checkAlreadyUsed();
@@ -137,21 +138,23 @@
 
         function checkIfWinner() {
             if(!underscoreArray.includes("_")){
-                alert("YOU WIN!!!")
+                 alert("YOU WIN!!!");
+                
             }
 
             if(hgame.lives === 0) {
                 alert("YOU LOSE YOU LOSER!!")
+                
             }
         }
             //creating buttons
-            function buttoncreate() {
-                for (let i = 0; i < hgame.letters.length; i++);
-                var button = document.createElement('BUTTON');
-                button.attr('data-letter', letters[i]);
-                button.text(letter[i]);
-                document.createElement.append(button);
-            }
+            // function buttoncreate() {
+            //     for (let i = 0; i < hgame.letters.length; i++);
+            //     var button = document.createElement('BUTTON');
+            //     button.attr('data-letter', letters[i]);
+            //     button.text(letter[i]);
+            //     document.createElement.append(button);
+            // }
        
            
 
@@ -188,6 +191,7 @@
     
                     start();
                     generateUnscore();
+                   
 
                     
 
